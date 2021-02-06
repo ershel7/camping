@@ -1,0 +1,96 @@
+@charset "utf-8";
+.hide{
+    font-size: 0;
+}
+header{
+    position: relative;
+}
+header h1{
+    position: absolute;
+    z-index: 1;
+}
+#lnb{
+    background-color: #F2F8FD;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+}
+#menu{
+    border-bottom: 1px solid #677d8d ;
+}
+#menu > ul{
+    display: inline-block;
+    text-align: center;
+}
+#menu > ul:hover ul{
+    display:block;
+}
+#menu > ul > li{
+    display: inline-block;
+    position: relative;
+}
+#menu > ul > li > a{
+    font-size: 20px;
+    color: #49708d;
+    font-weight: 1000;
+    width: 160px;
+    height: 82px;
+    display: block;
+    line-height: 82px;
+    position: relative;
+}
+#menu > ul > li > a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background-color: #49708D;
+    transition: all .5s;
+}
+#menu > ul > li > a:hover::after{
+    width: 100%;
+    left: 0;
+}
+#menu > ul ul{
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding-top: 20px
+}
+#menu > ul ul a{
+    position: relative;
+    font-size: 15px;
+    color: #49708d;
+    font-weight: 700;
+}
+#menu > ul ul li{
+    line-height: 28px;
+}
+#menu ul ul a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background-color: #49708D;
+    transition: all .5s;
+}
+#menu ul ul a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
