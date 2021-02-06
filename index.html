@@ -1,32 +1,47 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <title>WEB1 - Welcome</title>
-  <meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="colors.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1><a href="index.html">WEB</a></h1>
-  <input id="night_day" type="button" value="night" onclick="
-    nightDayHandler(this);
-  ">
-  <ol>
-    <li><a href="#!html" onclick="fetchPage('html')">HTML</a></li>
-    <li><a href="#!css" onclick="fetchPage('css')">CSS</a></li>
-    <li><a href="#!javascript" onclick="fetchPage('javascript')">JAVASCRIPT</a></li>
-  </ol>
-  <article>
+    <header>
+        <h1><a href="index.html"><img src="logo.png" alt="22"></a></h1>
+        <div id="lnb">
+            <nav id="menu">
+                <ul>
+                    <li><a href="#a">대명캠핑카</a>
+                        <ul>
+                            <li><a href="#a">ABOUT US</a></li>
+                            <li><a href="#a">차고지 위치</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#a">캠핑카 미리보기</a>
+                        <ul>
+                            <li><a href="#a">차 종류</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#a">캠핑카 예약</a>
+                        <ul>
+                            <li><a href="#a">요금 및 이용안내</a></li>
+                            <li><a href="#a">실시간 예약</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#a">고객센터</a>
+                        <ul>
+                            <li><a href="#a">공지사항</a></li>
+                            <!-- <li><a href="#a">예약문의</a></li>
+                            <li><a href="#a">고객후기</a></li>
+                            <li><a href="#a">포토앨범</a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+</header>
 
-  </article>
-  <script>
-    function fetchPage(name){
-      fetch(name).then(function(response){
-        response.text().then(function(text){
-          document.querySelector('article').innerHTML = text;
-        })
-      })
-    }
-  </script>
 </body>
-</html>
+</html> 
