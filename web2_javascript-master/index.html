@@ -5,6 +5,34 @@
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="colors.js"></script>
+  <!-- Load the JS SDK asynchronously -->
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <script>
+      window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '176640020914842',
+      cookie     : true,                     // Enable cookies to allow the server to access the session.
+      xfbml      : true,                     // Parse social plugins on this webpage.
+      version    : 'v9.0'           // Use this Graph API version for this call.
+    });
+
+
+    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+      console.log(response);
+      // statusChangeCallback(response);        // Returns the login status.
+    });
+  };
+ 
+  // function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+  //   console.log('Welcome!  Fetching your information.... ');
+  //   FB.api('/me', function(response) {
+  //     console.log('Successful login for: ' + response.name);
+  //     document.getElementById('status').innerHTML =
+  //       'Thanks for logging in, ' + response.name + '!';
+  //   });
+  // }
+
+  </script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
@@ -13,7 +41,7 @@
   ">
   <ol>
     <li><a href="#!html" onclick="fetchPage('html')">HTML</a></li>
-    <li><a href="#!css" onclick="fetchPage('css')">css</a></li>
+    <li><a href="#!css" onclick="fetchPage('css')">CSS</a></li>
     <li><a href="#!javascript" onclick="fetchPage('javascript')">JAVASCRIPT</a></li>
   </ol>
   <article>
@@ -26,6 +54,12 @@
           document.querySelector('article').innerHTML = text;
         })
       })
+    }
+    if(location.hash){
+      fetchPage(location.hash.substr(2));
+    }
+    else{
+      
     }
   </script>
 </body>
