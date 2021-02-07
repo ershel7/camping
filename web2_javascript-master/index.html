@@ -6,7 +6,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="colors.js"></script>
   <!-- Load the JS SDK asynchronously -->
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script> -->
   <script>
       window.fbAsyncInit = function() {
     FB.init({
@@ -35,6 +35,9 @@
   </script>
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v9.0&appId=176640020914842&autoLogAppEvents=1" nonce="Q0hu8FUC"></script>
+  
   <h1><a href="index.html">WEB</a></h1>
   <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this);
@@ -44,6 +47,7 @@
     <li><a href="#!css" onclick="fetchPage('css')">CSS</a></li>
     <li><a href="#!javascript" onclick="fetchPage('javascript')">JAVASCRIPT</a></li>
   </ol>
+  <div class="fb-login-button" data-width="500" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="true" data-use-continue-as="false"></div>
   <article>
 
   </article>
