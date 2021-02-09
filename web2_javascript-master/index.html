@@ -33,6 +33,17 @@
   // }
 
   </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="606463888247-7a31tak5qkmul892pvalvirjm3ke0r4f.apps.googleusercontent.com">
+  <script>
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+  </script>
 </head>
 <body>
   <div id="fb-root"></div>
@@ -48,6 +59,16 @@
     <li><a href="#!javascript" onclick="fetchPage('javascript')">JAVASCRIPT</a></li>
   </ol>
   <div class="fb-login-button" data-width="500" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="true" data-use-continue-as="false"></div>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <a href="#" onclick="signOut();">Sign out</a>
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script>
   <article>
 
   </article>
